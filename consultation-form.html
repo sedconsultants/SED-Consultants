@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SED Consultants offers business registration, tax, accounting and compliance services across South Africa.">
+  <meta name="keywords" content="CIPC, SARS, accounting, tax, registration, UIF, PAYE, VAT, SED Consultants">
+  <meta name="author" content="SED Consultants">
+  <title>Consultation Form | SED Consultants</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Analytics (replace G-XXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>SED Consultants™</h1>
+      <p class="tagline">Professional Compliance. Reliable Results.</p>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="why.html">Why Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <form action="https://formspree.io/f/manozagj" method="POST">
+      <!-- Section A -->
+      <div class="section">
+        <h2>Section A: Client Information</h2>
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="company_name" required />
+
+        <label for="regNumber">Registration Number:</label>
+        <input type="text" id="regNumber" name="registration_number" />
+
+        <label for="industrySector">Industry Sector:</label>
+        <input type="text" id="industrySector" name="industry_sector" />
+
+        <label for="companyAddress">Company Address:</label>
+        <textarea id="companyAddress" name="company_address"></textarea>
+
+        <label for="contactName">Contact Person:</label>
+        <input type="text" id="contactName" name="contact_name" placeholder="Full Name" required />
+        <input type="text" name="contact_position" placeholder="Position" />
+        <input type="tel" name="contact_phone" placeholder="Phone" />
+        <input type="email" name="contact_email" placeholder="Email" />
+      </div>
+
+      <!-- Section B -->
+      <div class="section">
+        <h2>Section B: Company Profile</h2>
+        <label>Type of Entity:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="entity_type[]" value="Private Company" /> Private Company</label>
+          <label><input type="checkbox" name="entity_type[]" value="Public Company" /> Public Company</label>
+          <label><input type="checkbox" name="entity_type[]" value="NGO/NPO" /> NGO / NPO</label>
+          <label><input type="checkbox" name="entity_type[]" value="Sole Proprietor" /> Sole Proprietor</label>
+          <label><input type="checkbox" name="entity_type[]" value="Partnership" /> Partnership</label>
+          <label><input type="text" name="entity_other" placeholder="Other (Specify)" /></label>
+        </div>
+
+        <label for="employees">Number of Employees:</label>
+        <input type="number" id="employees" name="employees" />
+
+        <label for="turnover">Annual Turnover (Last FY):</label>
+        <input type="text" id="turnover" name="turnover" />
+
+        <label for="beeLevel">B-BBEE Level (if applicable):</label>
+        <input type="text" id="beeLevel" name="bee_level" />
+
+        <label for="currentSed">Current SED/CSR Initiatives:</label>
+        <textarea id="currentSed" name="current_sed"></textarea>
+      </div>
+
+      <!-- Section C -->
+      <div class="section">
+        <h2>Section C: Consultation Requirements</h2>
+        <label>Primary goals for seeking consultation:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="goals[]" value="B-BBEE Compliance" /> B-BBEE Compliance</label>
+          <label><input type="checkbox" name="goals[]" value="Strategy Development" /> Strategy Development</label>
+          <label><input type="checkbox" name="goals[]" value="Project Implementation" /> Project Implementation</label>
+          <label><input type="checkbox" name="goals[]" value="Monitoring & Evaluation" /> Monitoring & Evaluation</label>
+          <label><input type="checkbox" name="goals[]" value="Reporting & Verification" /> Reporting & Verification</label>
+          <label><input type="checkbox" name="goals[]" value="Stakeholder Engagement" /> Stakeholder Engagement</label>
+          <label><input type="text" name="goals_other" placeholder="Other (Specify)" /></label>
+        </div>
+
+        <label for="existingPartners">Existing SED partners or beneficiaries?</label>
+        <select id="existingPartners" name="existing_partners">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label for="partnerList">If yes, list them:</label>
+        <textarea id="partnerList" name="partner_list"></textarea>
+
+        <label for="timeFrame">Preferred time frame for implementation:</label>
+        <input type="text" id="timeFrame" name="time_frame" />
+
+        <label for="budget">Budget Available (If known):</label>
+        <input type="text" id="budget" name="budget" />
+      </div>
+
+      <!-- Section D -->
+      <div class="section">
+        <h2>Section D: Documentation Checklist</h2>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="documents[]" value="Company Profile" /> Company Profile</label>
+          <label><input type="checkbox" name="documents[]" value="B-BBEE Certificate" /> B-BBEE Certificate</label>
+          <label><input type="checkbox" name="documents[]" value="Previous SED Reports" /> Previous SED Reports</label>
+          <label><input type="checkbox" name="documents[]" value="Financials" /> Audited Financial Statements</label>
+          <label><input type="checkbox" name="documents[]" value="Company Registration" /> Company Registration Docs</label>
+          <label><input type="checkbox" name="documents[]" value="Tax Clearance" /> Tax Clearance Certificate</label>
+          <label><input type="checkbox" name="documents[]" value="Organogram" /> Organogram</label>
+          <label><input type="text" name="documents_other" placeholder="Other (Specify)" /></label>
+        </div>
+      </div>
+
+      <!-- Section E -->
+      <div class="section">
+        <h2>Section E: Additional Information</h2>
+        <label for="targetGroups">Target groups or communities you wish to support:</label>
+        <textarea id="targetGroups" name="target_groups"></textarea>
+
+        <label for="notes">Additional Notes or Expectations:</label>
+        <textarea id="notes" name="notes"></textarea>
+      </div>
+
+      <!-- Agreement -->
+      <div class="section">
+        <h2>Consultation Agreement</h2>
+        <p>I confirm that the information provided is accurate to the best of my knowledge and agree to engage in an initial consultation with SED Consultants.</p>
+
+        <label for="clientSignature">Client Signature:</label>
+        <input type="text" id="clientSignature" name="client_signature" />
+
+        <label for="clientDate">Date:</label>
+        <input type="date" id="clientDate" name="client_date" />
+
+        <label for="consultantName">Consultant Name & Signature:</label>
+        <input type="text" id="consultantName" name="consultant_name" />
+
+        <label for="consultantDate">Date:</label>
+        <input type="date" id="consultantDate" name="consultant_date" />
+      </div>
+
+      <button type="submit">Submit Form</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>&copy; 2025 SED Consultants. All rights reserved.</p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a> |
+          <a href="terms.html">Terms & Conditions</a>
+        </p>
+      </div>
+      <div class="footer-right">
+        <p>Follow us:</p>
+        <a href="https://facebook.com/yourpage" target="_blank">Facebook</a> |
+        <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a> |
+        <a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="position:fixed; bottom:20px; right:20px; padding:10px; background:#003366; color:#fff; border:none; border-radius:5px;">Top</button>
+</body>
+</html>

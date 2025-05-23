@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="description" content="SED Consultants offers business registration, tax, accounting and compliance services across South Africa.">
+  <meta name="keywords" content="CIPC, SARS, accounting, tax, registration, UIF, PAYE, VAT, SED Consultants">
+  <meta name="author" content="SED Consultants">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // Replace with your real GA ID
+  </script>
+
+  <title>Contact Us | SED Consultants</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>SED Consultants™</h1>
+      <p class="tagline">Professional Compliance. Reliable Results.</p>
+    </div>
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="why.html">Why Us</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <h2>Get in Touch with Us</h2>
+
+    <section class="contact-info">
+      <h3>Contact Details</h3>
+      
+<p><strong>Head Office:</strong> 
+  <span id="address" class="blurred">1481/7 David Rd, Debonairpark, Vereeniging, South Africa</span>
+</p>
+      <p><strong>Phone:</strong> +27 78 255 7517</p>
+      <p><strong>Email:</strong> <a href="mailto:seboka.dlamini@gmail.com">seboka.dlamini@gmail.com</a></p>
+      <p><strong>Office Hours:</strong> Mon–Fri: 08:00–17:00, Sat: 09:00–13:00, Sun: Closed</p>
+
+<div id="map" class="blurred" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe
+    src="https://www.google.com/maps?q=1481/7+David+Rd,+Debonairpark,+Vereeniging,+South+Africa&output=embed"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;">
+  </iframe>
+</div>
+
+<button onclick="toggleBlur()" id="toggleButton" style="margin-top: 15px;">Show Address & Map</button>
+
+
+    </section>
+
+    <section class="contact-form-section">
+      <h3>Send Us a Message</h3>
+      <!-- NOTE: Replace action with your form handler URL or use a form service -->
+      <form action="https://formspree.io/f/manozagj" method="POST" id="contactForm">
+        <label for="fullName">Full Name<span class="required">*</span></label><br />
+        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" /><br /><br />
+
+        <label for="email">Email Address<span class="required">*</span></label><br />
+        <input type="email" id="email" name="email" required placeholder="you@example.com" /><br /><br />
+
+        <label for="phone">Phone Number</label><br />
+        <input type="tel" id="phone" name="phone" placeholder="+27 123 456 7890" /><br /><br />
+
+        <label for="service">I am interested in<span class="required">*</span></label><br />
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="company-registration">Company Registration & CIPC</option>
+          <option value="accounting-bookkeeping">Accounting & Bookkeeping</option>
+          <option value="payroll">Payroll & Employee Compliance</option>
+          <option value="workmens-compensation">Workmen’s Compensation</option>
+          <option value="sars-tax-returns">SARS Statutory Returns & Tax Services</option>
+          <option value="uif-returns">UIF Statutory Returns</option>
+          <option value="general-inquiry">General Inquiry</option>
+        </select><br /><br />
+
+        <label for="message">Your Message</label><br />
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea><br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <p>&copy; 2025 SED Consultants. All rights reserved.</p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a> |
+          <a href="terms.html">Terms & Conditions</a>
+        </p>
+      </div>
+      
+      <div class="footer-right">
+        <p>Follow us:</p>
+   <a href="https://facebook.com/SedComputerAcademy" target="_blank">Facebook</a> |
+   <a href="https://twitter.com/sedcomputeracad" target="_blank">Twitter</a> |
+   <a href="https://linkedin.com/in/seboka-dlamini-192a3b67" target="_blank">LinkedIn</a>
+        
+        <a href="https://wa.me/27782557517" target="_blank" style="position:fixed; bottom:80px; right:20px;">
+          <img src="https://web.whatsapp.com/img/favicon/1x/favicon.png" alt="WhatsApp" width="50" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Basic form validation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      const service = document.getElementById('service').value;
+      if (!service) {
+        alert('Please select a service you are interested in.');
+        e.preventDefault();
+      }
+    });
+  </script>
+
+  <!-- Add at the end of <body> -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
+          style="position:fixed; bottom:20px; right:20px; padding:10px; background:#003366; color:#fff; border:none; border-radius:5px;">
+    Top
+  </button>
+  
+  
+  <<script>
+  function toggleBlur() {
+    const address = document.getElementById('address');
+    const map = document.getElementById('map');
+    const button = document.getElementById('toggleButton');
+
+    const isBlurred = address.classList.contains('blurred');
+
+    if (isBlurred) {
+      address.classList.remove('blurred');
+      address.classList.add('unblurred');
+
+      map.classList.remove('blurred');
+      map.classList.add('unblurred');
+
+      button.textContent = 'Hide Address & Map';
+    } else {
+      address.classList.remove('unblurred');
+      address.classList.add('blurred');
+
+      map.classList.remove('unblurred');
+      map.classList.add('blurred');
+
+      button.textContent = 'Show Address & Map';
+    }
+  }
+</script>
+
+</body>
+</html>
