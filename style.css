@@ -1,0 +1,977 @@
+/* =============================
+   Global Variables & Resets
+============================= */
+:root {
+  --primary-color: #0d3b66;
+  --secondary-color: #f4d35e;
+  --accent-color: #ee964b;
+  --bg-color: #fdfdfd;
+  --text-color: #222;
+  --muted-color: #777;
+  
+  --font-body: 'Roboto', sans-serif;
+  --font-size-base: 16px;
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* =============================
+   Layout & Structure
+============================= */
+header,
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1.5rem;
+}
+
+header .logo h1 {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+header .tagline {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--secondary-color);
+}
+
+.navbar {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--secondary-color);
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+.hero {
+  background: cadetblue;
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =============================
+   Buttons & Links
+============================= */
+a.cta-button,
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+a.cta-button,
+.btn-primary {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #ddd;
+  color: #000;
+}
+
+a.cta-button:hover,
+.btn-primary:hover {
+  background: #ff6700;
+}
+
+.btn-secondary:hover {
+  background: #ccc;
+}
+
+/* =============================
+   Cards & Grids
+============================= */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.card p {
+  color: var(--muted-color);
+}
+
+/* =============================
+   Footer
+============================= */
+.site-footer {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* =============================
+   Other Utilities
+============================= */
+.scroll-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.scroll-top:hover {
+  background: #ff6700;
+}
+
+/* =============================
+   Responsive
+============================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
+
+section.overview {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Entire Services Section */
+section.services {
+  border: 2px solid #ccc;
+  padding: 30px;
+  margin: 30px 0;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards Container (for layout, optional) */
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Individual Service Card Styling */
+.service-cards .card {
+  flex: 1 1 calc(50% - 20px);
+  /* 2 per row on larger screens */
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect for better UX */
+.service-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .service-cards .card {
+    flex: 1 1 100%;
+  }
+}
+
+/* About Us Section Block Styling */
+section.about-us {
+  border: 2px solid #ccc;
+  padding: 30px;
+  margin: 30px 0;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional Heading Styling */
+section.about-us h2 {
+  margin-bottom: 15px;
+}
+
+/* Optional Paragraph Styling */
+section.about-us p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Style the Learn More button */
+section.about-us .btn-secondary {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  background-color: #6c757d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+section.about-us .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+
+
+/* Main container padding */
+.about-page {
+  padding: 20px;
+}
+
+/* General section block styling */
+.about-page section {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fefefe;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Section titles */
+.about-page h2,
+.about-page h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Paragraphs */
+.about-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* List items inside values and clients sections */
+.about-page .values li,
+.about-page .clients li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  list-style: disc;
+  color: #333;
+}
+
+/* Team section specific styling */
+.about-page .team {
+  text-align: center;
+}
+
+.about-page .team-member {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-page .team-member img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+}
+
+/* Call to Action Highlight */
+.about-page .call-to-action {
+  background-color: #fff;
+  border-color: #ccc;
+  text-align: center;
+}
+
+.about-page .call-to-action a {
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+
+/* Main services page padding */
+.services-page {
+  padding: 20px;
+}
+
+/* Section title */
+.services-page h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* General service category styling */
+.services-page .service-category {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #fcfcfc;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Sub-headings */
+.services-page .service-category h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+/* Fix unwrapped list items */
+.services-page .service-category li {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Highlight strong text in list items */
+.services-page .service-category li strong {
+  color: #000;
+}
+
+/* Call-to-action section */
+.services-page .call-to-action {
+  text-align: center;
+  border: 2px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* CTA heading */
+.services-page .call-to-action h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #004085;
+}
+
+/* CTA button styling */
+.services-page .call-to-action .cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.services-page .call-to-action .cta:hover {
+  background-color: #0056b3;
+}
+
+
+/* Base styling for the main wrapper */
+.why-page {
+  padding: 20px;
+}
+
+/* Page heading */
+.why-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* General section styling */
+.why-page section {
+  border: 2px solid #ccc;
+  background-color: #fefefe;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Section subheadings */
+.why-page h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* List item styling */
+.why-page li {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.why-page li strong {
+  color: #000;
+}
+
+/* Blockquotes - Client Testimonials */
+.why-page blockquote {
+  background-color: #f9f9f9;
+  border-left: 4px solid #007bff;
+  padding: 15px 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #555;
+  border-radius: 6px;
+}
+
+.why-page cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Call to action section */
+.why-page .call-to-action {
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.why-page .call-to-action h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #004085;
+}
+
+.why-page .call-to-action a.cta {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.why-page .call-to-action a.cta:hover {
+  background-color: #0056b3;
+}
+
+
+/* Contact Form Section */
+.contact-form-section {
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.contact-form-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.contact-form-section input, 
+.contact-form-section select, 
+.contact-form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.contact-form-section input:focus,
+.contact-form-section select:focus,
+.contact-form-section textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.contact-form-section textarea {
+  resize: vertical;
+}
+
+.required {
+  color: red;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Form Design */
+@media screen and (max-width: 768px) {
+  .contact-form-section {
+    padding: 20px;
+  }
+
+  .contact-form-section input,
+  .contact-form-section select,
+  .contact-form-section textarea {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* General Styles for Checkbox Groups */
+main form .checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+main form .checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+main form .checkbox-group input {
+  margin-right: 10px;
+}
+
+/* Checkbox 'Other' Text Inputs (if exists) */
+main form .checkbox-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+main form .checkbox-group .checkbox-other {
+  grid-column: span 2; /* Make the 'Other' text input span the full row */
+}
+
+/* Section Input and Textarea Styling */
+main form .section input[type="text"],
+main form .section input[type="number"],
+main form .section input[type="tel"],
+main form .section input[type="email"],
+main form .section select,
+main form .section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+main form .section select {
+  background-color: #fff;
+}
+
+/* Section Heading Styling */
+main form .section h2 {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Ensure all sections with checkboxes have consistent styling */
+main form .section .checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+main form .section .checkbox-group .checkbox-other {
+  grid-column: span 2; /* For 'Other (Specify)' to take full row */
+}
+
+/* Button Style */
+main form button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+main form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  main form .checkbox-group {
+    grid-template-columns: 1fr; /* Stack checkboxes vertically on small screens */
+  }
+
+  main form label {
+    font-size: 0.9rem;
+  }
+
+  main form input,
+  main form textarea,
+  main form select {
+    font-size: 0.9rem;
+  }
+  
+  main form button[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Centering the header and navigation */
+header {
+  display: flex;
+  justify-content: center;   /* Center content horizontally */
+  align-items: center;       /* Center content vertically */
+  flex-direction: column;    /* Stack title and navigation vertically */
+  background-color: cadetblue;    /* Dark background for the header */
+  color: white;              /* Text color */
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Navigation menu styles */
+nav {
+  margin-top: 10px;          /* Space between header title and menu */
+}
+
+nav ul {
+  list-style: none;          /* Remove default bullets */
+  display: flex;             /* Display list items horizontally */
+  gap: 20px;                 /* Space between links */
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;     /* Remove underlines from links */
+  color: white;              /* Link text color */
+  font-size: 18px;           /* Font size for links */
+  padding: 10px 20px;        /* Add padding for clickable area */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect on the menu links */
+nav ul li a:hover {
+  background-color: #555;    /* Darker background on hover */
+  border-radius: 5px;        /* Round the corners on hover */
+}
+
+
+/* Footer styles */
+footer {
+  background-color: cadetblue; /* Black background */
+  color: white; /* White text */
+  padding: 40px 0; /* Vertical padding */
+  text-align: center; /* Center text */
+  width: 100%; /* Full width */
+}
+
+/* Container to hold footer content */
+.footer-container {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  max-width: 1200px; /* Optional max-width to avoid stretching on large screens */
+  margin: 0 auto; /* Center container */
+}
+
+/* Style the footer links */
+.footer-links a,
+.follow-us a,
+.social-media a {
+  color: white; /* White text for links */
+  text-decoration: none;
+  font-size: 14px; /* Adjust font size */
+  margin: 5px 0; /* Spacing between links */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for links */
+.footer-links a:hover,
+.follow-us a:hover,
+.social-media a:hover {
+  color: #FFD700; /* Gold color on hover */
+}
+
+/* Spacing between sections */
+.footer-links {
+  margin-bottom: 20px; /* Space between links and "Follow Us" */
+}
+
+.follow-us {
+  margin-bottom: 20px; /* Space between "Follow Us" and social media links */
+}
+
+/* For small screens: adjust layout */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 20px; /* Less padding on small screens */
+  }
+
+  .footer-links a,
+  .social-media a,
+  .follow-us a {
+    margin: 10px 0; /* More space on small screens */
+  }
+}
+
+
+#privacy-policy {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+#privacy-policy h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+#privacy-policy h3 {
+  font-size: 1.3rem;
+  color: #004080;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+#privacy-policy p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+#privacy-policy li {
+  margin-left: 20px;
+  margin-bottom: 0.5em;
+  list-style-type: disc;
+}
+
+#privacy-policy strong {
+  color: #000;
+}
+
+#privacy-policy a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+#privacy-policy a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  #privacy-policy {
+    padding: 20px;
+  }
+
+  #privacy-policy h2 {
+    font-size: 1.5rem;
+  }
+
+  #privacy-policy h3 {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+#terms-and-conditions {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+#terms-and-conditions h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+#terms-and-conditions h3 {
+  font-size: 1.3rem;
+  color: #004080;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+#terms-and-conditions p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+#terms-and-conditions li {
+  margin-left: 20px;
+  margin-bottom: 0.5em;
+  list-style-type: disc;
+}
+
+#terms-and-conditions strong {
+  color: #000;
+}
+
+#terms-and-conditions a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+#terms-and-conditions a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  #terms-and-conditions {
+    padding: 20px;
+  }
+
+  #terms-and-conditions h2 {
+    font-size: 1.5rem;
+  }
+
+  #terms-and-conditions h3 {
+    font-size: 1.1rem;
+  }
+}
